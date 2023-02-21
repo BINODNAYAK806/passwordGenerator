@@ -1,6 +1,22 @@
 import './App.css';
 
 function App() {
+  
+  function generatePassword() {
+  const length = 12; // Set the length of the password to be 12 characters
+  const charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@"; // Define the character set that the password can be composed of
+  let password = "";
+
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * charSet.length);
+    password += charSet[randomIndex];
+  }
+
+  return password;
+}
+
+console.log(generatePassword()); // Prints a randomly generated password to the console
+
   return (
     <div className="App">
       <header className="App-header">
